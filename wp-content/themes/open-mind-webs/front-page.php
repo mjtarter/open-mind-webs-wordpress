@@ -91,62 +91,65 @@
          <h2 class="services-title m-0">Services</h2>
          <p class="p-vert-5">I provide a combination of top-notch web development services and cost effective prices that allow businesses both large and small to gain the competitive advantage necessary to succeed.</p>
          <p><i>Click the icon below to learn more about my services</i></p>
-         <span class="glyphicon glyphicon-hand-down"></span>
       </div>
    </div>
 </div>
+<!-- End Slider -->
+
+<!-- Slider Icons: All Services icon (Set equal to the first service post) !-->
+<?php 
+   $args = array(
+      'post_type' => 'service',
+      'posts_per_page' => 1,
+   );
+   
+   $query = new WP_query($args);
+?>   
+
 <div id="services-bar-container">
    <div class="container">
       <div class="row">
          <ul id="services-buttons">
             <p class="visible-xs text-center" style="color:white;"><i>Click an icon for more info</i></p>
             <li>
-               <a href="/services/web-development.html">
+            <?php if ($query->have_posts() ) : while($query->have_posts() ) : $query->the_post(); ?>
+               <a href="<?php the_permalink(); ?>">
+            <?php endwhile; endif; wp_reset_postdata(); ?>  
                   <img src="<?php echo get_template_directory_uri(); ?>/img/all-services.png" id="all-services" class="center-block">
                   <p class="text-center m-0">All Services</p>
                </a>
             </li>
-            <li onMouseOver="changeTextWebDesign(); changeBgTan();" onMouseOut="changeTextAllServices(); changeBgOrange(); changeWebDesignTrans();">
-               <a href="/services/web-design.html">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/web-design-trans.png" id="web-design" class="center-block">
-                  <p class="text-center m-0">Web Design</p>
-               </a>
-            </li>
-            <li onMouseOver="changeTextWebDev(); changeBgSilver();" onMouseOut="changeTextAllServices(); changeBgOrange(); changeWebDevTrans();">
-               <a href="/services/web-development.html">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/web-development-trans.png" id="web-dev" class="center-block">
-                  <p class="text-center m-0">Web Development</p>
-               </a>
-            </li>
-            <li onMouseOver="changeTextDbManagement(); changeBgOrange();" onMouseOut="changeTextAllServices(); changeDbManagementTrans();">
-               <a href="/services/database-management.html">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/database-management-trans.png" id="db-management" class="center-block">
-                  <p class="text-center m-0">Database Management</p>
-               </a>
-            </li>
-            <li onMouseOver="changeTextSeo(); changeBgTan();" onMouseOut="changeTextAllServices(); changeBgOrange(); changeSeoTrans();">
-               <a href="/services/seo.html">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/seo-trans.png" id="seo" class="center-block">
-                  <p class="text-center m-0">Copywriting / SEO</p>
-               </a>
-            </li>
-            <li onMouseOver="changeTextEcommerce(); changeBgSilver();" onMouseOut="changeTextAllServices(); changeBgOrange(); changeEcommerceTrans();">
-               <a href="/services/e-commerce.html">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/e-commerce-trans.png" id="ecommerce" class="center-block">
-                  <p class="text-center m-0">E-commerce Implementation</p>
-               </a>
-            </li>
-            <li onMouseOver="changeTextAnalytics();" onMouseOut="changeTextAllServices(); changeAnalyticsTrans();">
-               <a href="/services/analytics.html">
-                  <img src="<?php echo get_template_directory_uri(); ?>/img/analytics-trans.png" id="analytics"class="center-block">
-                  <p class="text-center m-0">Analytics Reporting</p>
-               </a>
-            </li>
+            <!-- End All Services icon !-->
+
+            <!-- Remaining Service icons !-->
+            <?php 
+               $args = array(
+                  'post_type' => 'service',
+                  'posts_per_page' => -1,
+               );
+               
+               $query = new WP_query($args);
+            ?>  
+            
+            <?php if ($query->have_posts() ) : while($query->have_posts() ) : $query->the_post(); ?>
+               <!--Clean up user field input for inline JS -->
+               <?php foreach (get_post_custom_values('short_description') as $desc ) $short_description = addslashes($desc); //Escape Quotes ?> 
+               <?php foreach (get_post_custom_values('call_to_action') as $value ) $cta = addslashes($value); //Escape Quotes ?> 
+               <?php foreach (get_post_custom_values('service') as $id ) $strip = array(' ', '/'); $id = str_replace($strip, '', $id); $id = stripcslashes($id); //Strip invalid characters for id field ?> 
+
+               <li onMouseOver="changeSlide('<?php the_field('service') ?>', '<?php echo $short_description; ?>', '<?php the_field('slide_color') ?>', '<?php the_field('icon') ?>', '<?php echo $id ?>', '<?php echo $cta ?>');" onMouseOut="changeTextAllServices(); changeIconTrans('<?php echo $id ?>', '<?php the_field('transparent_icon') ?>');">
+                  <a href="<?php the_permalink(); ?>">
+                     <img src="<?php the_field('transparent_icon') ?>" alt="<?php the_field('service') ?>" id="<?php echo $id ?>" class="center-block">
+                     <p class="text-center m-0"><?php the_field('service') ?></p>
+                  </a>
+               </li>
+            <?php endwhile; endif; wp_reset_postdata(); ?>
+
          </ul>
       </div>
    </div>
 </div>
-<!-- End Services Slider -->
+<!-- End Slider Icons-->
 
 <section id="process-section">
    <div class="container hidden-xs">

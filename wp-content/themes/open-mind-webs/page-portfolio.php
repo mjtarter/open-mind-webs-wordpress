@@ -9,7 +9,7 @@ get_header(); ?>
 <?php 
 	$args = array(
     	'post_type' => 'portfolio',
-			'posts_per_page' => -1,
+		'posts_per_page' => -1,
 	);
 	$category_custom_values = array();
 	
