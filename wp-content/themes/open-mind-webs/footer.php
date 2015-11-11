@@ -12,7 +12,7 @@
             </ul>
           </div>
           <div class="hidden-xs col-sm-4 no-float vert-middle">
-            <p>I’m interested in meeting other developers in the Denver area and providing kickass web services to amazing clients that want to grow their businesses. If either of these apply to you, <a href="get_template_directory_uri()/contact" style="text-decoration:underline;">contact me</a> right away!</p>
+            <p>I'm interested in meeting other developers in the Denver area and providing kickass web services to amazing clients that want to grow their businesses. If either of these apply to you, <a href="get_template_directory_uri()/contact" style="text-decoration:underline;">contact me</a> right away!</p>
           </div>
           <div class="col-xs-6 col-sm-4 no-float vert-middle">
             <p class="hidden-xs hidden-sm" id="footer-title"><b>Get Started</b></p>
@@ -21,7 +21,7 @@
           </div>
         </div>
         <div class="p-vert-5" id="copyright">
-          <p class="m-0">Open Mind Webs &nbsp; &nbsp; &nbsp;|&nbsp; &nbsp; &nbsp; Denver, CO &nbsp; &nbsp; &nbsp;|&nbsp; &nbsp; &nbsp; Copyright © 2014 Open Mind Webs. All rights reserved.</p>
+          <p class="m-0">Open Mind Webs &nbsp; &nbsp; &nbsp;|&nbsp; &nbsp; &nbsp; Denver, CO &nbsp; &nbsp; &nbsp;|&nbsp; &nbsp; &nbsp; Copyright &copy; 2014 Open Mind Webs. All rights reserved.</p>
         <div>
       </footer>        
 

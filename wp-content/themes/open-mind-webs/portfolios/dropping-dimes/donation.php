@@ -252,7 +252,7 @@ $headers = 'From: '.$email_from."\r\n".
 			<span class='st_googleplus_large'></span></div>
         </div>
     	<div class="copyright">
-        	<p style="display:table-cell; margin:0; padding:0; vertical-align:middle;">Copyright © 2014 Dropping Dimes Foundation, Inc. All rights reserved. &nbsp; | &nbsp; Web Development provided by <a href="http://www.openmindwebs.com">Open Mind Webs</a></p>
+        	<p style="display:table-cell; margin:0; padding:0; vertical-align:middle;">Copyright &copy; 2014 Dropping Dimes Foundation, Inc. All rights reserved. &nbsp; | &nbsp; Web Development provided by <a href="http://www.openmindwebs.com">Open Mind Webs</a></p>
 		</div>
     </div>
 

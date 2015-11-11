@@ -54,9 +54,9 @@
                <img src="<?php echo get_template_directory_uri(); ?>/img/mci-logo.png" class="img-responsive center-block">
                <hr>
                <p>
-                  MyCampus Island is a startup that I have been developing in my spare time and has been a hobby and passion of mine for quite awhile. <span class="hidden-xs">MCI is a revolutionary web-based application for Indiana University students that provides updated student housing listings as well as the “Student Housing Encyclopedia”, which displays in-depth individual pages for EVERY student housing property.</span> <br><br> I am open to bringing in new members to the MCI team (just me as of right now) as well as speaking with potential investors.
+                  MyCampus Island is a startup that I have been developing in my spare time and has been a hobby and passion of mine for quite awhile. <span class="hidden-xs">MCI is a revolutionary web-based application for Indiana University students that provides updated student housing listings as well as the "Student Housing Encyclopedia", which displays in-depth individual pages for EVERY student housing property.</span> <br><br> I am open to bringing in new members to the MCI team (just me as of right now) as well as speaking with potential investors.
                </p>
-               <button class="button aqua-button"><a href="http://mycampusisland.com" target="_blank"><span style="color:white;" class="glyphicon glyphicon-share-alt"></span> Check It Out!</a></button>
+               <a href="http://mycampusisland.com" target="_blank"><button class="button aqua-button"><span style="color:white;" class="glyphicon glyphicon-share-alt"></span> Check It Out!</button></a>
                <a href="#mciModal" data-toggle="modal"><button class="button aqua-button"><span style="color:white;" class="glyphicon glyphicon-share-alt"></span> Contact Me</button></a>
             </div>
          </div>
@@ -173,7 +173,7 @@
       </div>
       <div class=" process-text col-sm-6">
          <p class="text-center" style="font-size:1.5em;"><b>Maintenance</b></p>
-         <p class="text-center">Once your desired web service is completed and launched I don't just set you loose on your own. I offer maintenance and content update plans because your business, your customers, your competitors, and the web in general are all constantly adapting and improving so why shouldn’t your website? However, if you’d like to take over full control of your site, I can teach you how to make minor updates and changes on your own as well.</p>
+         <p class="text-center">Once your desired web service is completed and launched I don't just set you loose on your own. I offer maintenance and content update plans because your business, your customers, your competitors, and the web in general are all constantly adapting and improving so why shouldn't your website? However, if you'd like to take over full control of your site, I can teach you how to make minor updates and changes on your own as well.</p>
       </div>
    </div>
 

@@ -5,7 +5,7 @@
 		<div class="row">
 			<div class="col-sm-6 no-float" style="display:table-cell;">
 				<p class="h1"><?php the_field('project_title') ?></p>
-				<p><a href="get_template_directory_uri()/portfolio"><?php the_field('url') ?></a></p>
+				<p><a href="<?php the_field('path') ?>" target="_blank"><?php the_field('url') ?></a></p>
 				<div class="clearfix">
 					<!-- Add comma separated custom field: services_provided into array !-->
 					<?php $services_provided = explode(', ', get_field('services_provided')); ?>
