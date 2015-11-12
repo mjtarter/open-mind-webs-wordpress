@@ -131,15 +131,20 @@
                $query = new WP_query($args);
             ?>  
             
-            <?php if ($query->have_posts() ) : while($query->have_posts() ) : $query->the_post(); ?>
-               <!--Clean up user field input for inline JS -->
-               <?php foreach (get_post_custom_values('short_description') as $desc ) $short_description = addslashes($desc); //Escape Quotes ?> 
-               <?php foreach (get_post_custom_values('call_to_action') as $value ) $cta = addslashes($value); //Escape Quotes ?> 
-               <?php foreach (get_post_custom_values('service') as $id ) $strip = array(' ', '/'); $id = str_replace($strip, '', $id); $id = stripcslashes($id); //Strip invalid characters for id field ?> 
+            <?php if ($query->have_posts() ) : while($query->have_posts() ) : $query->the_post(); 
+                  
+               //Vars
+               $transparent_icon = get_field('transparent_icon');
+               $icon = get_field('icon'); 
 
-               <li onMouseOver="changeSlide('<?php the_field('service') ?>', '<?php echo $short_description; ?>', '<?php the_field('slide_color') ?>', '<?php the_field('icon') ?>', '<?php echo $id ?>', '<?php echo $cta ?>');" onMouseOut="changeTextAllServices(); changeIconTrans('<?php echo $id ?>', '<?php the_field('transparent_icon') ?>');">
+               //Clean up user field input for inline JS
+               foreach (get_post_custom_values('short_description') as $desc ) $short_description = addslashes($desc); //Escape Quotes  
+               foreach (get_post_custom_values('call_to_action') as $value ) $cta = addslashes($value); //Escape Quotes 
+               foreach (get_post_custom_values('service') as $id ) $strip = array(' ', '/'); $id = str_replace($strip, '', $id); $id = stripcslashes($id); //Strip invalid characters for id field ?> 
+
+               <li onMouseOver="changeSlide('<?php the_field('service') ?>', '<?php echo $short_description; ?>', '<?php the_field('slide_color') ?>', '<?php echo $icon['url']; ?>', '<?php echo $id ?>', '<?php echo $cta ?>');" onMouseOut="changeTextAllServices(); changeIconTrans('<?php echo $id ?>', '<?php echo $transparent_icon['url']; ?>');">
                   <a href="<?php the_permalink(); ?>">
-                     <img src="<?php the_field('transparent_icon') ?>" alt="<?php the_field('service') ?>" id="<?php echo $id ?>" class="center-block">
+                     <img src="<?php echo $transparent_icon['url']; ?>" alt="<?php echo $transparent_icon['alt']; ?>" id="<?php echo $id ?>" class="center-block">
                      <p class="text-center m-0"><?php the_field('service') ?></p>
                   </a>
                </li>
