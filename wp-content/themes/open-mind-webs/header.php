@@ -6,7 +6,6 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title><?php wp_title(); ?></title>
         <meta property="og:description" content="Open Mind Webs - The personal site of front end developer, Matt Tarter. Contact me today to obtain your business goals through the web with a professionally developed website!" />
         <meta property="og:image" content="http://openmindwebs.com/img/work-desk.jpg" />        
         <meta name="viewport" content="width=device-width, initial-scale=1">

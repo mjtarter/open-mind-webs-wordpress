@@ -9,6 +9,8 @@ function register_theme_menus() {
 }
 add_action('init', 'register_theme_menus');
 
+//Declare that this theme does not use a hard coded <title> tag in the document head, but instead expect WP to provide it for us
+add_theme_support( 'title-tag' );
 function omw_theme_styles() {
 	wp_enqueue_style('font_awesome_css', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
 	wp_enqueue_style('bootstrap_css', get_template_directory_uri() . '/css/bootstrap.min.css');
