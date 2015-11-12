@@ -50,19 +50,26 @@ get_header(); ?>
 				<div class="row" id="<?php echo $category ?>">
 					<p class="text-center h1 portfolio-titles"><?php echo $category ?></p>
 					<?php if ($query->have_posts() ) : while($query->have_posts() ) : $query->the_post(); ?>	
-						<?php if( get_field(category) == $unique_category_values[$i] ): ?> 
-							<?php if( get_field(layout) != 'Full Page' ): ?>
+						
+						<?php 
+							//Vars
+							$image = get_field('image');
+							$image2 = get_field('image_2'); 
+						?>
+
+						<?php if( get_field('category') == $unique_category_values[$i] ): ?> 
+							<?php if( get_field('layout') != 'Full Page' ): ?>
 								<div class="col-sm-6">
-									<a href="<?php the_permalink(); ?>"><img src="<?php the_field('image') ?>" alt="responvive website" class="img-responsive center-block"></a>
+									<a href="<?php the_permalink(); ?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="img-responsive center-block"/></a>
 									<p class="h3 text-center"><a href="<?php the_permalink(); ?>"><?php the_field('project_title') ?></a></p>
 									<p><?php echo custom_field_excerpt(); ?></p>
 								</div>
 							<?php else : ?>
 								<div class="col-sm-6">
-									<a href="<?php the_permalink(); ?>"><img src="<?php the_field('image') ?>" alt="responvive website" class="img-responsive center-block"></a>
+									<a href="<?php the_permalink(); ?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="img-responsive center-block"></a>
 								</div>
 								<div class="col-sm-6">
-									<a href="<?php the_permalink(); ?>"><img src="<?php the_field('image_2') ?>" alt="responsive website" class="img-responsive center-block"></a>
+									<a href="<?php the_permalink(); ?>"><img src="<?php echo $image2['url']; ?>" alt="<?php echo $image2['alt']; ?>" class="img-responsive center-block"></a>
 								</div>
 							</div>
 							<div class="row">
