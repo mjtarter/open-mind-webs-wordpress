@@ -47,8 +47,11 @@
 		
 		<!-- Begin Service Main Content !-->
 		<div class="col-sm-pull-4 col-sm-8">	
-			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-				<h1 class="m-0 text-center"><img src="<?php the_field('icon') ?>" alt="<?php the_field('service') ?>" class="hidden-xs"> <?php the_field('service') ?></h1>
+			<?php if (have_posts()) : while (have_posts()) : the_post();
+				//Vars
+				$icon = get_field('icon'); ?>
+
+				<h1 class="m-0 text-center"><img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>" class="hidden-xs"> <?php the_field('service') ?></h1>
 				<p style="padding-top:20px;"><?php the_field('description') ?></p>
 				<button onclick="window.location.href='get_template_directory_uri()/contact'" style="display:block;" class="button lg-button orange-button center-block m-vert-20">Get Started Now</button>
 			<?php endwhile; endif; ?>

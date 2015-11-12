@@ -1,4 +1,9 @@
-<?php get_header(); ?>
+<?php get_header(); 
+
+//Vars
+$image = get_field('image');
+$screenshot = get_field('screenshot');
+$image_3 = get_field('image_3');?>
 
 <section class="main-content p-vert-50 folio-pages">
 	<div class="container">
@@ -18,10 +23,10 @@
 				</div>
 				<hr>
 				<p><?php the_field('description') ?></p>
-				<img src="<?php the_field('image') ?>" class="hidden-xs hidden-sm col-md-12 img-responsive center-block p-top-15">
+				<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="hidden-xs hidden-sm col-md-12 img-responsive center-block p-top-15">
 			</div>
 			<div class="col-sm-6 no-float" id="folio-img-container">
-				<img src="<?php the_field('screenshot') ?>" id="folio-main-img" class="img-responsive center-block">
+				<img src="<?php echo $screenshot['url']; ?>" alt="<?php echo $screenshot['alt']; ?>" id="folio-main-img" class="img-responsive center-block">
 			</div>
 		</div>
 		<!-- If the optional image and caption exists include it below !-->
@@ -29,7 +34,7 @@
 			<hr class="hidden-xs hidden-sm">
 			<div class="row hidden-xs hidden-sm">
 				<div class="col-sm-6 no-float vert-middle">
-					<img src="<?php the_field('image_3') ?>" class="col-xs-12 img-responsive center-block p-top-15">
+					<img src="<?php echo $image_3['url']; ?>" alt="<?php echo $image_3['alt']; ?>" class="col-xs-12 img-responsive center-block p-top-15">
 				</div>
 				<div class="col-sm-6 no-float vert-middle">
 					<div class="text-center" id="info-box">
