@@ -10,7 +10,7 @@
         <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
         <?php wp_head(); ?>
     </head>
-    <body>
+    <body <?php body_class();?>>
       <!--[if lte IE 8]><script src="/js/ie6/warning.js"></script><script>window.onload=function(){e("js/ie6/")}</script><![endif]-->
         <nav id="main-nav">
           <div class="container">
